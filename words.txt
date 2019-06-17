@@ -1,0 +1,7 @@
+test
+butterfly
+idontknow
+duostumper
+epitech
+guess
+hangman
