@@ -1,0 +1,91 @@
+--------------------------
+
+B2 - Stumpers
+B-CPE-210
+
+HANGMAN
+Duo Stumper
+
+--------------------------
+
+binary name:       hangman
+group size:        2
+repository name:   CPE_duostumper_$STUMPERNUMBER_$ACADEMICYEAR
+repository rights: ramassage-tek
+language:          C
+compilation:       via Makefile, including re, clean and fclean rules
+
+--------------------------
+
+/!!\
+- Your repository must contain the totality of your source files,
+  but no useless files (binary, temp files, obj files,...).
+- Error messages have to be written on the error output, and the program should
+  then exit with the 84 error code (0 if there is no error).
+
+/!!\
+The $STUMPERNUMBER is always on one digit: 1, 2, ...
+
+/!!\
+For this project, the only authorized functions are those of the standard libC.
+
+subject:
+You must code a program in C that will take a dictionary as parameter (mandatory) and optionally a number of tries (10 by default).
+Your program will retrieve all of the words defined in this file and will use it as a dictionary during the game.
+The goal of the player is to find the word letter by letter before being hanged.
+- Each of the dictionary's lines should only contain one word.
+- The word used in the section will be randomly selected.
+- Your program must let the player know the position of the letters he/she has already found, the total
+  number of letters in the word and the number of tries he/she has left (see examples).
+- You will read the letter guessed by the user on the standard input, and apply the modifications accordingly.
+
+tips:
+All text on the balise do not have to be print.
+In this case "[user_entry]" indique you what the user of the program enter and end with "[\user_entry]"
+
+
+Examples:
+
+```Terminal
+∼/B-CPE-210> cat file
+butterfly
+test
+my_swap
+∼/B-CPE-210> ./hangman file
+*******
+Tries: 10
+
+Your letter: [user_entry]a[\user_entry]
+*****a*
+Tries: 10
+
+Your letter: [user_entry]b[\user_entry]
+b: is not in this word
+*****a*
+Tries: 9
+
+Your letter: [user_entry]m[\user_entry]
+m****a*
+Tries: 9
+
+Your letter: [user_entry]p[\user_entry]
+m****ap
+Tries: 9
+
+[And so on, until:]
+Your letter: [user_entry]m[\user_entry]
+my_swap
+Tries: 2
+
+Congratulations!
+∼/B-CPE-210> ./hangman file 1 2>/dev/null
+****
+Tries: 1
+
+Your letter: [user_entry]v[\user_entry]
+v: is not in this word
+****
+Tries: 0
+
+You lost!
+```
