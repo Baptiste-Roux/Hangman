@@ -20,6 +20,7 @@ hangman_t *init(void)
 
 int main(int ac, char **av)
 {
+    // Test commit
     int fd = 0;
     char *str = NULL;
     hangman_t *hangman = init();
